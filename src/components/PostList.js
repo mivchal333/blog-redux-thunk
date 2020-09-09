@@ -16,9 +16,9 @@ class PostList extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {};
-}
+const mapStateToProps = (state) => ({
+    posts: state.posts
+})
 
 export default connect(
     mapStateToProps,
