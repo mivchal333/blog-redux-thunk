@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
-import {fetchUser} from "../actions";
 import {connect} from "react-redux";
 
 class UserHeader extends Component {
-    componentDidMount() {
-        this.props.fetchUser(this.props.userId)
-    }
-
     render() {
         if (!this.props.user) {
             return <div>Loading</div>
@@ -22,4 +17,4 @@ class UserHeader extends Component {
 const mapStateToProps = (state, props) => ({
     user: state.users.find(user => user.id === props.userId)
 })
-export default connect(mapStateToProps, {fetchUser})(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
